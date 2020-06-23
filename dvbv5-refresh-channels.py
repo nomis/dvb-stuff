@@ -78,5 +78,6 @@ if __name__== "__main__":
 	parser.add_argument("output", metavar="OUTPUT", type=str, help="output file")
 	args = parser.parse_args()
 
+	output = format(merge(args.previous, args.input))
 	with open(args.output, "wt") as f:
-		f.write(format(merge(args.previous, args.input)))
+		f.write(output)
